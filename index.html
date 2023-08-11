@@ -5,30 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsly</title>
     <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
     <nav>
         <div class="main-nav container flex">
             <img src="2-removebg-preview.png" href="#" onclick="reload()" class="web-logo">
-            <!-- <a href="#" onclick="reload()" class="web-logo">
-                Newsly
-            </a> -->
-            <div class="nav-links">
-                <ul class="flex">
-                    <li class="hover-links nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
-                    <li class="hover-links nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
-                    <li class="hover-links nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
-                </ul>
-            </div>
+            <!-- <div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div> -->
+                <div class="nav-links">
+                    <ul class="flex">
+                        <li class="hover-links nav-item" id="home" onclick="onNavItemClick('home')">Home</li>
+                        <li class="hover-links nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                        <li class="hover-links nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                        <li class="hover-links nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
+                        <li class="hover-links nav-item" id="travel" onclick="onNavItemClick('travel')">Travel</li>
+                    </ul>
+                </div>
+                
             <div class="search-bar flex">
                 <input type="text" class="news-input" id="search-text" placeholder=" e.g. Science">
                 <button class="search-button" id="search-button">Search</button>
             </div>
         </div>
-    </nav>
+    </nav> 
+
 
     <main>
+
+        <div class="content container flex">Home</div>
+ 
+
         <div class="card-container container flex" id="cards-container">
 
         </div>
@@ -47,7 +56,12 @@
         </div>
     </template>
 
-    <!-- <script src="script.js"></script> -->
+    <footer>
+        <div class="web-name flex container">The News Factory</div>
+        <div class="copyright flex container">Copyright © 2023</div>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

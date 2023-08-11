@@ -1,7 +1,7 @@
 const API_KEY = "3cba9ee7d2ff4ad99a80fa558026915a";
 const url = "https://newsapi.org/v2/everything?q=";
 
-window.addEventListener("load", () => fetchNews("India"));
+window.addEventListener("load", () => fetchNews("Top News"));
 
 async function fetchNews(query) {
   const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
@@ -67,4 +67,26 @@ searchButton.addEventListener("click", () => {
 
 function reload() {
   window.location.reload();
+}
+
+const navItems = document.querySelectorAll(".nav-item");
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const itemName = item.textContent;
+    updateContent(itemName);
+  });
+});
+
+searchButton.addEventListener("click", () => {
+  const query = searchText.value;
+  if (query) {
+    updateContent(`Search: ${query}`);
+    // fetchNews(query);
+  }
+});
+
+// Function to update the content based on the selected item
+function updateContent(itemName) {
+  const contentDiv = document.querySelector(".content");
+  contentDiv.textContent = itemName;
 }

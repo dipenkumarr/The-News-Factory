@@ -90,3 +90,29 @@ function updateContent(itemName) {
   const contentDiv = document.querySelector(".content");
   contentDiv.textContent = itemName;
 }
+
+function toggleMobileMenu() {
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("active");
+}
+
+// Close the mobile menu when a link is clicked
+const navItemsss = document.querySelectorAll(".nav-item");
+navItemsss.forEach((item) => {
+  item.addEventListener("click", () => {
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+    }
+  });
+});
+// Close the mobile menu when clicking anywhere on the screen
+document.addEventListener("click", (event) => {
+  const navLinks = document.querySelector(".nav-links");
+  if (
+    navLinks.classList.contains("active") &&
+    !event.target.closest(".main-nav")
+  ) {
+    navLinks.classList.remove("active");
+  }
+});
